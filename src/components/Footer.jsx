@@ -1,3 +1,5 @@
+import tmdb from "../assets/tmdb.svg"
+
 function Footer() {
   return (
     <div className="bg-emerald-500 py-2 flex justify-center dark:bg-neutral-800 bottom-0">
@@ -7,7 +9,7 @@ function Footer() {
       >
         <span className="font-bold">Powered by:</span>
         <img
-          src="src/assets/tmdb.svg"
+          src={tmdb}
           alt="The Movie DataBase Logo"
           className="ml-2 w-44 sm:w-80"
         />
