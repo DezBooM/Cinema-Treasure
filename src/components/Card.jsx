@@ -54,11 +54,11 @@ function Card({
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <p className="text-md sm:text-lg lg:text-2xl leading-none mt-10 sm:mt-2 lg:mt-10">{overview}</p>
-            <div className="flex gap-5 items-center px-2 py-1 bg-white rounded-lg lg:mt-10 bg-opacity-50">
+            <p className="text-md lg:text-2xl leading-none mt-10 sm:mt-5 lg:mt-10">{overview}</p>
+            <div className="flex gap-5 items-center px-2 py-1 bg-white rounded-lg mt-10 sm:mt-0 lg:mt-10 bg-opacity-50">
               {production_companies?.map((logo) => (
                 <img
-                  className= {logo.logo_path ? "w-10 sm:w-20" : "bg-neutral-900 text-xs px-2 py-1 rounded-lg"}
+                  className= {logo.logo_path ? "w-12 sm:w-20" : "bg-neutral-900 text-xs px-2 py-1 rounded-lg"}
                   key={logo.id}
                   src={`${baseUrlImg}${logo.logo_path}`}
                   alt={logo.name}
