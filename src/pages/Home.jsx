@@ -5,7 +5,7 @@ import Single from "../components/Single"
 function Home() {
   const [movies, setMovies] = useState([])
   const [page, setPage] = useState(1)
-  
+
   const getPopular = async () => {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${
@@ -36,7 +36,10 @@ function Home() {
           ))}
         </div>
         <div className="flex justify-center py-5">
-          <button className="px-4 py-1 font-bold sm:text-3xl rounded-full bg-emerald-900 dark:bg-neutral-800" onClick={() => setPage(page + 1)}>
+          <button
+            className="px-4 py-1 font-bold sm:text-3xl rounded-full bg-emerald-900 dark:bg-neutral-800"
+            onClick={() => setPage(page + 1)}
+          >
             LOAD MORE...
           </button>
         </div>
