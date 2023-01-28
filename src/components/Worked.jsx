@@ -13,7 +13,6 @@ function Cast({ crew, cast }) {
           .map((person) => (
             <div key={person.id}>
               <img
-                loading="lazy"
                 className="rounded-md"
                 src={
                   person.profile_path
@@ -30,7 +29,6 @@ function Cast({ crew, cast }) {
           .map((person) => (
             <div key={person.id}>
               <img
-                loading="lazy"
                 className="rounded-md"
                 src={
                   person.profile_path
@@ -50,7 +48,6 @@ function Cast({ crew, cast }) {
         {cast?.map((person) => (
           <div key={person.id}>
             <img
-              loading="lazy"
               className="rounded-md"
               src={
                 person.profile_path

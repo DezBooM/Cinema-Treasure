@@ -2,15 +2,19 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import Details from "./Details"
 import Home from "./Home"
 import Searched from "./Searched"
+import TopRated from "./TopRated"
+import Upcoming from "./Upcoming"
 
 function Pages() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Navigate to="/movies" replace />} />
-        <Route path="/movies" element={<Home />} />
-        <Route path="/movies/:details" element={<Details />} />
-        <Route path="/movies/searched/:search" element={<Searched />} />
+        <Route path="/" element={<Navigate to="/popular" replace />} />
+        <Route path="/popular" element={<Home />} />
+        <Route path="/movie/:details" element={<Details />} />
+        <Route path="/movie/searched/:search" element={<Searched />} />
+        <Route path="/top-rated" element={<TopRated />} />
+        <Route path="/upcoming" element={<Upcoming />} />
       </Routes>
     </div>
   )

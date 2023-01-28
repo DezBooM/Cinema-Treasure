@@ -1,12 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Pages from "./pages/Pages"
 
 function App() {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(() => JSON.parse(localStorage.getItem("theme")) || false)
 
   const handleTheme = () => setDark(!dark)
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(dark))
+  }, [dark])
 
   return (
     <div className={dark ? "dark" : ""}>

@@ -21,7 +21,7 @@ function Card({
         />
         <div className="bg-black absolute w-full h-full z-10 opacity-60" />
       </div>
-      <div className="absolute flex scale-y-110 sm:scale-100 lg:scale-110 lg:w-5/6 h-5/6 mx-auto lg:left-0 lg:right-0 sm:pt-4 lg:p-4 px-2 bottom-0 sm:-bottom-5 lg:bottom-0 z-10 rounded-md bg-black bg-opacity-70">
+      <div className="absolute flex scale-y-110 sm:scale-100 lg:scale-110 lg:w-5/6 h-5/6 mx-auto lg:left-0 lg:right-0 sm:pt-4 lg:p-4 px-2 -bottom-8 sm:-bottom-12 lg:-bottom-8 z-10 rounded-md bg-black bg-opacity-70">
         <img
           className="w-0 lg:w-2/4 object-cover rounded-md sm:mr-5"
           src={`${baseUrlImg}${poster_path}`}
@@ -35,7 +35,7 @@ function Card({
               <div className="flex flex-wrap justify-center sm:justify-end gap-1 sm:gap-2">
                 {genres?.map((genre) => (
                   <p
-                    className="text-center flex items-center text-xs hover:bg-neutral-700 cursor-pointer lg:text-base px-2 sm:px-3 sm:py-1 font-bold bg-neutral-900 rounded-full"
+                    className="text-center flex items-center text-xs lg:text-base px-2 sm:px-3 sm:py-1 font-bold bg-neutral-900 rounded-full"
                     key={genre.id}
                   >
                     {genre.name}

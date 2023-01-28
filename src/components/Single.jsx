@@ -3,9 +3,8 @@ import { baseUrlImg } from "../api links/apiLinks"
 
 function Single({ poster_path, title, release_date, id }) {
   return (
-    <Link to={`/movies/${id}`}>
+    <Link to={`/movie/${id}`}>
       <img
-        loading="lazy"
         className="rounded-md"
         src={`${baseUrlImg}${poster_path}`}
         alt={title}

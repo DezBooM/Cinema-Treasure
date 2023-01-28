@@ -2,43 +2,43 @@ import { useEffect, useState } from "react"
 import MostPopular from "../components/MostPopular"
 import Single from "../components/Single"
 
-function Home() {
-  const [movies, setMovies] = useState([])
-  const [pagePopular, setPagePopular] = useState(1)
+function Upcoming() {
+  const [upcoming, setUpcoming] = useState([])
+  const [pageUpcoming, setPageUpcoming] = useState(1)
 
-  const getPopular = async () => {
+  const getUpcoming = async () => {
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${
         import.meta.env.VITE_API_KEY
-      }${pagePopular === 1 ? `` : `&page=${pagePopular}`}`
+      }${pageUpcoming === 1 ? `` : `&page=${pageUpcoming}`}`
     )
     if (!res.ok) throw new Error(`Error occurred in ${res.status}`)
     const data = await res.json()
-    movies.length
-      ? setMovies(movies.concat(data.results))
-      : setMovies(data.results)
+    upcoming.length
+      ? setUpcoming(upcoming.concat(data.results))
+      : setUpcoming(data.results)
   }
 
   useEffect(() => {
-    getPopular().catch((e) => console.log(e))
-  }, [pagePopular])
+    getUpcoming().catch((e) => console.log(e))
+  }, [pageUpcoming])
 
   return (
-    movies.length > 0 && (
+    upcoming.length > 0 && (
       <div className="bg-emerald-100 dark:bg-neutral-900">
-        <MostPopular {...movies[0]} />
+        <MostPopular {...upcoming[0]} />
         <h1 className="font-bold text-4xl text-center mt-10 text-neutral-900 dark:text-yellow-400">
-          Popular Movies
+          Upcoming Movies
         </h1>
         <div className="text-neutral-900 dark:text-yellow-400 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 mx-10 gap-10 mt-10">
-          {movies?.map((movie) => (
+          {upcoming?.map((movie) => (
             <Single key={movie.id} {...movie} />
           ))}
         </div>
         <div className="flex justify-center py-5">
           <button
-            className="px-4 py-1 font-bold sm:text-3xl rounded-full bg-emerald-900 dark:bg-neutral-800"
-            onClick={() => setPagePopular(pagePopular + 1)}
+            className="px-4 py-1 font-bold outline-none sm:text-3xl rounded-full bg-emerald-900 dark:bg-neutral-800"
+            onClick={() => setPageUpcoming(pageUpcoming + 1)}
           >
             LOAD MORE...
           </button>
@@ -48,4 +48,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Upcoming

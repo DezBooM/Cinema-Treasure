@@ -9,7 +9,7 @@ function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    navigate(`/movies/searched/${query}`)
+    navigate(`/movie/searched/${query}`)
   }
 
   return (

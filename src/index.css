@@ -6,3 +6,12 @@ html {
     margin: 0;
     padding: 0;
 }
+
+input,
+textarea,
+button,
+select,
+a,
+Link  {
+    -webkit-tap-highlight-color: transparent;
+}
