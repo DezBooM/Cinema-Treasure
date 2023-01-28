@@ -21,15 +21,15 @@ function Card({
         />
         <div className="bg-black absolute w-full h-full z-10 opacity-60" />
       </div>
-      <div className="absolute flex scale-y-110 sm:scale-100 lg:scale-110 lg:w-5/6 h-5/6 mx-auto lg:left-0 lg:right-0 p-4 bottom-0 z-10 rounded-md bg-black bg-opacity-70">
+      <div className="absolute flex scale-y-110 sm:scale-100 lg:scale-110 lg:w-5/6 h-5/6 mx-auto lg:left-0 lg:right-0 sm:pt-4 lg:p-4 px-2 bottom-0 z-10 rounded-md bg-black bg-opacity-70">
         <img
           className="w-0 lg:w-2/4 object-cover rounded-md sm:mr-5"
           src={`${baseUrlImg}${poster_path}`}
         />
-        <div className="flex flex-col justify-around sm:h-auto">
+        <div className="flex flex-col justify-around sm:justify-start lg:justify-around">
           <div>
             <div className="flex flex-col-reverse sm:flex-row justify-between items-center">
-              <h1 className="font-bold mt-5 sm:mt-0 text-lg text-center sm:text-2xl lg:text-4xl tracking-wide">
+              <h1 className="font-bold mt-5 sm:mt-0 text-start lg:text-center text-xl mb-10 sm:mb-0 sm:text-2xl lg:text-4xl tracking-wide">
                 {title}
               </h1>
               <div className="flex flex-wrap justify-center sm:justify-end gap-1 sm:gap-2">
@@ -53,12 +53,12 @@ function Card({
               </p>
             </div>
           </div>
-          <div>
-            <p className="text-md sm:text-lg lg:text-2xl mt-10">{overview}</p>
-            <div className="flex gap-5 flex-1 items-center justify-center px-2 py-1 bg-white rounded-lg lg:mt-10 bg-opacity-50">
+          <div className="flex flex-col items-center">
+            <p className="text-md sm:text-lg lg:text-2xl leading-none mt-10 sm:mt-2 lg:mt-10">{overview}</p>
+            <div className="flex gap-5 w-max items-center justify-center px-2 py-1 bg-white rounded-lg lg:mt-10 bg-opacity-50">
               {production_companies?.map((logo) => (
                 <img
-                  className= {logo.logo_path ? "w-8 sm:w-32 h-auto" : "bg-neutral-900 text-xs px-2 py-1 rounded-lg"}
+                  className= {logo.logo_path ? "w-10 sm:w-20" : "bg-neutral-900 text-xs px-2 py-1 rounded-lg"}
                   key={logo.id}
                   src={`${baseUrlImg}${logo.logo_path}`}
                   alt={logo.name}
