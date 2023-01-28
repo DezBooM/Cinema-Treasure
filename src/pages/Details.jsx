@@ -7,7 +7,7 @@ function Details() {
   const [details, setDetails] = useState({})
   const [worked, setWorked] = useState([])
   const params = useParams()
-  console.log(worked?.cast)
+
   const getDetails = async (id) => {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${

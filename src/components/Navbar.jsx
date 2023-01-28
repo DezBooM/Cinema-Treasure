@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Search from "./Search"
 
 function Navbar({ dark, handleTheme }) {
   return (
@@ -8,11 +9,7 @@ function Navbar({ dark, handleTheme }) {
           CINEMA TREASURE
         </h1>
       </Link>
-      <input
-        className="lg:-translate-x-20 bg-emerald-900 dark:bg-neutral-900 placeholder:text-emerald-100 placeholder:opacity-50 outline-none border-none rounded-full py-1 w-1/2 lg:w-1/3 px-5"
-        type="text"
-        placeholder="Search"
-      />
+      <Search />
       <button
         type="button"
         className="p-2 rounded-full bg-emerald-900 dark:bg-neutral-900 text-center"

@@ -13,8 +13,13 @@ function Cast({ crew, cast }) {
           .map((person) => (
             <div key={person.id}>
               <img
+                loading="lazy"
                 className="rounded-md"
-                src={person.profile_path ? `${baseUrlImg}${person.profile_path}` : noImage}
+                src={
+                  person.profile_path
+                    ? `${baseUrlImg}${person.profile_path}`
+                    : noImage
+                }
               />
               <h2>{person.job}:</h2>
               <h2>{person.name}</h2>
@@ -25,8 +30,13 @@ function Cast({ crew, cast }) {
           .map((person) => (
             <div key={person.id}>
               <img
+                loading="lazy"
                 className="rounded-md"
-                src={person.profile_path ? `${baseUrlImg}${person.profile_path}` : noImage}
+                src={
+                  person.profile_path
+                    ? `${baseUrlImg}${person.profile_path}`
+                    : noImage
+                }
               />
               <h2>{person.job}:</h2>
               <h2>{person.name}</h2>
@@ -40,8 +50,13 @@ function Cast({ crew, cast }) {
         {cast?.map((person) => (
           <div key={person.id}>
             <img
+              loading="lazy"
               className="rounded-md"
-              src={person.profile_path ? `${baseUrlImg}${person.profile_path}` : noImage}
+              src={
+                person.profile_path
+                  ? `${baseUrlImg}${person.profile_path}`
+                  : noImage
+              }
               alt={`Photo of ${person.name}`}
             />
             <h2>{person.character}:</h2>
