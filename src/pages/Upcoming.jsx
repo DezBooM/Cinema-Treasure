@@ -10,7 +10,7 @@ function Upcoming() {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${
         import.meta.env.VITE_API_KEY
-      }${pageUpcoming === 1 ? `` : `&page=${pageUpcoming}`}`
+      }&region=US${pageUpcoming === 1 ? `` : `&page=${pageUpcoming}`}`
     )
     if (!res.ok) throw new Error(`Error occurred in ${res.status}`)
     const data = await res.json()
