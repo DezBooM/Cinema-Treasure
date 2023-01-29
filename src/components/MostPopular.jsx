@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { baseUrlImg } from "../api links/apiLinks"
+import { baseUrlImg } from "../utils/utils"
 
 function MostPopular({ backdrop_path, title, overview, release_date, id }) {
   return (
