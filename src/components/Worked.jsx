@@ -1,5 +1,5 @@
-import { baseUrlImg } from "../api links/apiLinks"
 import noImage from "../assets/no_image.jpg"
+import { baseUrlImg } from "../utils/utils"
 
 function Cast({ crew, cast }) {
   return (

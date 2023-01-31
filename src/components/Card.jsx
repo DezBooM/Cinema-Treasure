@@ -1,4 +1,5 @@
-import { baseUrlImg } from "../api links/apiLinks"
+import { baseUrlImg } from "../utils/utils"
+
 
 function Card({
   backdrop_path,
