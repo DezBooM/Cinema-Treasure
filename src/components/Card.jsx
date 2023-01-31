@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { baseUrlImg } from "../utils/utils"
 
 
@@ -35,12 +36,12 @@ function Card({
               </h1>
               <div className="flex flex-wrap justify-center sm:justify-end gap-1 sm:gap-2">
                 {genres?.map((genre) => (
-                  <p
-                    className="text-center flex items-center text-xs lg:text-base px-2 sm:px-3 sm:py-1 font-bold bg-neutral-900 rounded-full"
+                  <Link to={`/popular/${genre.id}`}
+                    className="text-center flex items-center hover:bg-neutral-800 text-xs lg:text-base px-2 sm:px-3 sm:py-1 font-bold bg-neutral-900 rounded-full"
                     key={genre.id}
                   >
                     {genre.name}
-                  </p>
+                  </Link>
                 ))}
               </div>
             </div>

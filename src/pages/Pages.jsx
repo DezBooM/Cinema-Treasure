@@ -1,5 +1,6 @@
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import Details from "./Details"
+import Genre from "./Genre"
 import Home from "./Home"
 import Searched from "./Searched"
 import TopRated from "./TopRated"
@@ -15,6 +16,7 @@ function Pages() {
         <Route path="/movie/searched/:search" element={<Searched />} />
         <Route path="/top-rated" element={<TopRated />} />
         <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/popular/:genre" element={<Genre />} />
       </Routes>
     </div>
   )

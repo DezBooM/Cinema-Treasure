@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import { Link, useLocation, useParams } from "react-router-dom"
 import MostPopular from "../components/MostPopular"
 import Single from "../components/Single"
+import { genres } from "../utils/utils"
 
 function Home() {
   const [movies, setMovies] = useState([])
@@ -27,7 +29,18 @@ function Home() {
     movies.length > 0 && (
       <div className="bg-emerald-100 dark:bg-neutral-900">
         <MostPopular {...movies[0]} />
-        <h1 className="font-bold text-4xl text-center mt-10 text-neutral-900 dark:text-yellow-400">
+        <div className="flex overflow-x-scroll lg:overflow-auto lg:flex-wrap justify-center mx-2 lg:mx-32 mt-2">
+          {genres.map((genre) => (
+            <Link
+              className="bg-emerald-900 dark:bg-yellow-500 hover:bg-emerald-800 dark:hover:bg-yellow-700 mx-2 my-1 flex items-center px-3 lg:py-2 rounded-md lg:rounded-full text-emerald-100 dark:text-neutral-900 text-sm sm:text-xl"
+              key={genre.id}
+              to={`/popular/${genre.id}`}
+            >
+              {genre.name}
+            </Link>
+          ))}
+        </div>
+        <h1 className="font-bold text-4xl text-center mt-5 text-neutral-900 dark:text-yellow-400">
           Popular Movies
         </h1>
         <div className="text-neutral-900 dark:text-yellow-400 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 mx-10 gap-10 mt-10">

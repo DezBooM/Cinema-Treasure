@@ -21,5 +21,3 @@ export const genres = [
   { id: 10752, name: "War" },
   { id: 37, name: "Western" },
 ]
-
-const something = "https://api.themoviedb.org/3/discover/movie?api_key=0cd83c143d86cb36a2d682029d028081&sort_by=popularity.desc&with_genres=28"
