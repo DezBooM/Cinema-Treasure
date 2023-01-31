@@ -29,7 +29,7 @@ function Home() {
     movies.length > 0 && (
       <div className="bg-emerald-100 dark:bg-neutral-900">
         <MostPopular {...movies[0]} />
-        <div className="flex overflow-x-scroll lg:overflow-auto lg:flex-wrap justify-center mx-2 lg:mx-32 mt-2">
+        <div className="flex overflow-x-scroll lg:w-auto lg:overflow-auto lg:flex-wrap lg:justify-center mx-2 lg:mx-32 mt-2">
           {genres.map((genre) => (
             <Link
               className="bg-emerald-900 dark:bg-yellow-500 hover:bg-emerald-800 dark:hover:bg-yellow-700 mx-2 my-1 flex items-center px-3 lg:py-2 rounded-md lg:rounded-full text-emerald-100 dark:text-neutral-900 text-sm sm:text-xl"
