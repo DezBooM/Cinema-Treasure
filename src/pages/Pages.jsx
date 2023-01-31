@@ -10,11 +10,11 @@ function Pages() {
     <div>
       <Routes>
         <Route path="/" element={<Navigate to="/popular" replace />} />
-        <Route path="/popular" element={<Home />} />
+        <Route path="/#/popular" element={<Home />} />
         <Route path="/#/movie/:details" element={<Details />} />
-        <Route path="/movie/searched/:search" element={<Searched />} />
-        <Route path="/top-rated" element={<TopRated />} />
-        <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/#/movie/searched/:search" element={<Searched />} />
+        <Route path="/#/top-rated" element={<TopRated />} />
+        <Route path="/#/upcoming" element={<Upcoming />} />
       </Routes>
     </div>
   )
