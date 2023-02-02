@@ -16,7 +16,7 @@ function Pages() {
         <Route path="/movie/searched/:search" element={<Searched />} />
         <Route path="/top-rated" element={<TopRated />} />
         <Route path="/upcoming" element={<Upcoming />} />
-        <Route path="/popular/:genre" element={<Genre />} />
+        <Route path="/popular/:genre/:name" element={<Genre />} />
       </Routes>
     </div>
   )

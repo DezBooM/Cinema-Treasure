@@ -34,7 +34,7 @@ function Home() {
             <Link
               className="bg-emerald-900 dark:bg-yellow-500 hover:bg-emerald-800 dark:hover:bg-yellow-700 mx-2 my-1 flex items-center px-3 lg:py-2 rounded-md lg:rounded-full text-emerald-100 dark:text-neutral-900 text-sm sm:text-xl"
               key={genre.id}
-              to={`/popular/${genre.id}`}
+              to={`/popular/${genre.id}/${genre.name.toLowerCase()}`}
             >
               {genre.name}
             </Link>
