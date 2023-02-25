@@ -5,22 +5,25 @@ import Single from "../components/Single"
 
 function Searched() {
   const [searched, setSearched] = useState([])
+  const [pageSearched, setPageSearched] = useState(1)
   const params = useParams()
 
-  const getPopular = async (name) => {
+  const getSearched = async (name) => {
     const res = await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${
         import.meta.env.VITE_API_KEY
-      }&query=${name}`
+      }&query=${name}${pageSearched === 1 ? `` : `&page=${pageSearched}`}`
     )
     if (!res.ok) throw new Error(`Error occurred in ${res.status}`)
     const data = await res.json()
-    setSearched(data.results)
+    searched.length
+      ? setSearched(searched.concat(data.results))
+      : setSearched(data.results)
   }
 
   useEffect(() => {
-    getPopular(params.search).catch((e) => console.log(e))
-  }, [params.search])
+    getSearched(params.search).catch((e) => console.log(e))
+  }, [pageSearched])
 
   return (
     <div className="bg-emerald-100 dark:bg-neutral-900">
@@ -33,9 +36,14 @@ function Searched() {
           <Single key={movie.id} {...movie} />
         ))}
       </div>
-      <button className="text-black" onClick={() => setPage(page + 1)}>
-        Load more...
-      </button>
+      <div className="flex justify-center py-5">
+        <button
+          className="px-4 py-1 font-bold sm:text-3xl rounded-full bg-emerald-900 dark:bg-neutral-800"
+          onClick={() => setPageSearched(pageSearched + 1)}
+        >
+          LOAD MORE...
+        </button>
+      </div>
     </div>
   )
 }

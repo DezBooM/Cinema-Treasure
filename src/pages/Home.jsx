@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useLocation, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import MostPopular from "../components/MostPopular"
 import Single from "../components/Single"
 import { genres } from "../utils/utils"

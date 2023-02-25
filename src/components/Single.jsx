@@ -3,7 +3,7 @@ import { baseUrlImg } from "../utils/utils"
 
 function Single({ poster_path, title, release_date, id }) {
   return (
-    <Link to={`/movie/${id}`}>
+    <Link to={`/movie/${id}/${title}`}>
       <img
         className="rounded-md"
         src={`${baseUrlImg}${poster_path}`}
