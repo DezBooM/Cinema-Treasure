@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className={dark ? "dark" : ""}>
-      <div className="min-h-screen text-emerald-100 dark:bg-neutral-900 dark:text-yellow-400 font-crimson">
+      <div className="min-h-screen flex flex-col text-emerald-100 dark:bg-neutral-900 dark:text-yellow-400 font-crimson">
         <Navbar dark={dark} handleTheme={handleTheme} />
         <Pages />
         <Footer />

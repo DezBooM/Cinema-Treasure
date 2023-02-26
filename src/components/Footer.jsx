@@ -2,7 +2,7 @@ import tmdb from "../assets/tmdb.svg"
 
 function Footer() {
   return (
-    <div className="bg-emerald-500 py-2 flex justify-center dark:bg-neutral-800 bottom-0">
+    <div className="bg-emerald-500 py-2 flex justify-center dark:bg-neutral-800 mt-auto">
       <a
         href="https://www.themoviedb.org/"
         className="bg-emerald-900 dark:bg-neutral-900 p-2 rounded-lg flex justify-center"
