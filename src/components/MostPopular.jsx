@@ -20,7 +20,7 @@ function MostPopular({ backdrop_path, title, overview, release_date, id }) {
             .toLowerCase()}`}
           className="font-bold text-2xl text-center sm:text-left lg:text-5xl tracking-wide"
         >
-          {title} <span>{release_date?.split("-")[0]}</span>
+          {title} <span>{`(${release_date?.split("-")[0]})`}</span>
         </Link>
         <p className="text-lg lg:text-2xl mt-10">{overview}</p>
       </div>
