@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function Search() {
@@ -9,7 +9,13 @@ function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    navigate(`/movie/searched/${query}`)
+    navigate(
+      `/movie/searched/${query
+        ?.replaceAll(" ", "-")
+        .replaceAll(":", "")
+        .toLowerCase()}`
+    )
+    setQuery("")
   }
 
   return (

@@ -4,7 +4,9 @@ import Navbar from "./components/Navbar"
 import Pages from "./pages/Pages"
 
 function App() {
-  const [dark, setDark] = useState(() => JSON.parse(localStorage.getItem("theme")) || false)
+  const [dark, setDark] = useState(
+    () => JSON.parse(localStorage.getItem("theme")) || false
+  )
 
   const handleTheme = () => setDark(!dark)
 

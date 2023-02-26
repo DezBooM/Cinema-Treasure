@@ -40,7 +40,7 @@ function Details() {
     )
     if (!res.ok) throw new Error(`Error occurred in ${res.status}`)
     const data = await res.json()
-    setVideos(data?.results?.filter(item => item.type ==="Trailer"))
+    setVideos(data?.results?.filter((item) => item.type === "Trailer"))
   }
 
   useEffect(() => {
